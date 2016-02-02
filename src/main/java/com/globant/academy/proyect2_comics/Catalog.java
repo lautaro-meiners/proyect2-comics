@@ -23,16 +23,31 @@ public class Catalog {
 	public ArrayList<String> displayGenres(){
 		return genres;
 	}
-	
-	public void addComics(Comics comics){
-		comics.add(comics);
+
+	public static void addComics(Comics comic){
+		comics.add(comic);
 	}
 	
-	public void addLoans (Loans loans){
-		loans.add(loans);
+	public static void removeComics(Comics comic){
+		comics.remove(comic);
 	}
 	
-	public void addUsers (User users){
-		users.add(users);
+	public static void addLoan(Loans loan){
+		loans.add(loan);
 	}
-}
+	
+	public static void removeLoan(Loans loan){
+		loans.remove(loan);
+	}
+	
+	public static void addUsers(User user){
+		users.add(user);
+	}
+	
+	public static void removeUsers(User user){
+		users.add(user);
+	}
+	
+	
+	
+	
