@@ -18,7 +18,7 @@ public class Comics {
 	}
 	
 	public String toString(){
-		return "Title:" + title + "\nAuthor:" + author +"\nCondition:" + condition + "\nGenre:" + genre + "\nComic Id:" + comicId + "\nRendered?" + rendered;
+		return "Title:" + title + " Author:" + author +" Condition:" + condition + " Genre:" + genre + " Comic Id:" + comicId + " Rendered?:" + rendered;
 	}
 
 	public String getTitle() {

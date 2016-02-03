@@ -8,7 +8,7 @@ public class Catalog {
 	private static ArrayList<User> users = new ArrayList<User>();
 	private static ArrayList<String> genres = new ArrayList<String>();
 	
-	public ArrayList<Comics> displayComics(){
+	public static ArrayList<Comics> displayComics(){
 		return comics;
 	}
 	

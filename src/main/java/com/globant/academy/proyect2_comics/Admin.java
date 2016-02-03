@@ -148,7 +148,7 @@ public class Admin extends User{
 	
 	//adminActivity0
 	public void watchComicList(){
-		
+		Catalog.displayComics().forEach(s-> System.out.println(s.toString()));
 	}
 	
 	//adminActivity1
