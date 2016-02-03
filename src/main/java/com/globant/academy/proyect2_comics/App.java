@@ -8,9 +8,32 @@ import java.util.Scanner;
  */
 public class App 
 {
+	
     public static void main( String[] args )
     {
-    	System.out.println("Select any of the options below");
+    	Scanner input = new Scanner(System.in);
+    	String username;
+    	String password;
+    	
+    	System.out.println("Log in:");
+    	System.out.println("Username:");
+    	username = input.next();
+    	
+    	System.out.println("Password:");
+    	password = input.next();
+    	
+    	if(username.equals("Sheldon") && password.equals("Bazinga")){
+    		System.out.println("Welcome Dr.Cooper");
+    		AdminMenu displayMenu = new AdminMenu();
+    	} else if(username.equals("Howard") && password.equals("Engineering")){
+    		System.out.println("Welcome Howard");
+    		UserMenu displayMenu = new UserMenu();
+    	} else if(username.equals("Leonard") && password.equals("Penny")){
+    		System.out.println("Welcome Leonard");
+    		UserMenu displayMenu = new UserMenu();
+    	}
+    	
+    	/*System.out.println("Select any of the options below");
     	System.out.println("0) Watch Comics list");
     	System.out.println("1) Add new comics");
     	System.out.println("2) Modify existing comics");
@@ -33,6 +56,6 @@ public class App
         
         Admin test = new Admin();
         test.adminActivity(i);
-        input.close();
+        input.close();*/
     }
 }

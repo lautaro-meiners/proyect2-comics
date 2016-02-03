@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class Login {
 	
-	//Scanner input = new Scanner(System.in);
+	Scanner input = new Scanner(System.in);
 	
-	//String username;
-	//String password;
+	String username;
+	String password;
 	
-	//System.out.println("Log in:");
-	//System.out.println("Username:");
+	System.out.println("Log in:");
+	System.out.println("Username:");
 	username = input.next();
 	
 	System.out.println("Password:");
@@ -20,5 +20,5 @@ public class Login {
 		System.out.println("Welcome Dr.Cooper");
 	} else {
 		System.out.println("Access Denied!");
-	}*/
-//}
+	}
+}*/
