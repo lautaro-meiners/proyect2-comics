@@ -1,5 +1,7 @@
 package com.globant.academy.proyect2_comics;
 
+import java.util.Scanner;
+
 public class Admin extends User{
 	private static String username = "Sheldon";
 	private static String password = "Bazinga";
@@ -18,10 +20,122 @@ public class Admin extends User{
 		 "11) Add new genres",
 		 "12) Modify existing genres",
 		 "13) Delete existing genres",
-		 "14) Watch existing genres"}
+		 "14) Watch existing genres"};
 	
+	
+	public enum adminActivity{
+		WATCH_COMICS(0),
+		ADD_COMICS(1),
+		MODIFY_COMICS(2),
+		DELETE_COMICS(3),
+		ACCEPT_USERS(4),
+		DELETE_USERS(5),
+		WATCH_USERS(6),
+		ACCEPT_LOANS(7),
+		MODIFY_LOANS(8),
+		DELETE_LOANS(9),
+		WATCH_LOANS(10),
+		ADD_GENRE(11),
+		MODIFY_GENRES(12),
+		DELETE_GENRES(13),
+		WATCH_GENRES(14);
+	
+	
+	private final int code;
+	adminActivity(int code) {this.code = code;}
+	public int getCode() {return code;}
+	
+	}
+	
+	private static int adminInput;{
+		Scanner input = new Scanner(System.in);
+		input.equals(input);
+		input.close();
+	}
+	
+	public void adminActivity(int i){
+		switch (i){
+		
+		case 0:
+			System.out.println("This is the list of Comics available right now");
+			this.watchComicList();
+			break;
+		
+		
+		case 1:
+			System.out.println("Add new comics");
+			this.addNewComics();
+			break;
+			
+		case 2:
+			System.out.println("Modify existing comics");
+			this.modifyExistingComics();
+			break;
+			
+		case 3:
+			System.out.println("Delete existing comics");
+			this.deleteExistingComics();
+			break;
+			
+		case 4:
+			System.out.println("Accept new users");
+			this.acceptNewUsers();
+			break;
+			
+		case 5:
+			System.out.println("Delete existing users");
+			this.deleteExistingUsers();
+			break;
+			
+		case 6:
+			System.out.println("Watch existing users");
+			this.watchExistingUsers();
+			break;
+			
+		case 7:
+			System.out.println("Accept new loans");
+			this.acceptNewLoans();
+			break;
+			
+		case 8:
+			System.out.println("Modify existing loans");
+			this.modifyExistingLoans();
+			break;
+			
+		case 9:
+			System.out.println("Delete existing loans");
+			this.deleteExistingLoans();
+			break;
+			
+		case 10:
+			System.out.println("Watch existing loans");
+			this.watchExistingLoans();
+			break;
+			
+		case 11:
+			System.out.println("Add new genres");
+			this.addNewGenres();
+			break;
+			
+		case 12:
+			System.out.println("Modify existing genres");
+			this.modifyExistingGenres();
+			break;
+			
+		case 13:
+			System.out.println("Delete existing genres");
+			this.deleteExistingGenres();
+			break;
+			
+		case 14:
+			System.out.println("Watch existing genres");
+			this.watchExistingGenres();
+			break;
+	}
+
+	}
 	public void addUser(User user){
-		Catalog.addUser(user);
+		Catalog.addUsers(user);
 	}
 	
 	public void addLoan(Loans loan){
@@ -29,7 +143,7 @@ public class Admin extends User{
 	}
 	
 	public void removeUser(User user){
-		Catalog.removeUser(user);
+		Catalog.removeUsers(user);
 	}
 	
 	//adminActivity0

@@ -9,7 +9,7 @@ public class People {
 	private int phoneNumber;
 	private String email;
 	
-	public ArrayList<Comics> displayComics{
-		return comics;
+	public ArrayList<Comics> displayComics(){
+		return new Catalog().displayComics();
 	}
 }

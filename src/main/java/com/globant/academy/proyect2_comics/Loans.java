@@ -7,11 +7,11 @@ public class Loans {
 	private String loanSituation;
 	
 	public Comics getComics(){
-		return this.comics
+		return this.comics;
 	}
 	
 	public People getPeople(){
-		return this.people
+		return this.people;
 	}
 	
 	

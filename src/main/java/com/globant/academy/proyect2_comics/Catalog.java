@@ -47,7 +47,7 @@ public class Catalog {
 	public static void removeUsers(User user){
 		users.add(user);
 	}
-	
+}
 	
 	
 	
