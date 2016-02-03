@@ -8,6 +8,15 @@ public class Comics {
 	private int comicId;
 	private boolean rendered;
 	
+	public Comics(String title,String author,String condition,String genre,int comicId){
+		this.title = title;
+		this.author = author;
+		this.condition = condition;
+		this.genre = genre;
+		this.comicId = comicId;
+		this.rendered = false;
+	}
+	
 	public String toString(){
 		return "Title:" + title + "\nAuthor:" + author +"\nCondition:" + condition + "\nGenre:" + genre + "\nComic Id:" + comicId + "\nRendered?" + rendered;
 	}

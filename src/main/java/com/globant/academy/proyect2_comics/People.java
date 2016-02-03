@@ -12,4 +12,6 @@ public class People {
 	public ArrayList<Comics> displayComics(){
 		return new Catalog().displayComics();
 	}
+	
+	
 }
