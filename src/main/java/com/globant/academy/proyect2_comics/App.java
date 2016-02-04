@@ -11,8 +11,8 @@ public class App
 	
     public static void main( String[] args )
     {
-    	Catalog.addComics(new Comics("Batman","Bob Kane && Bill Finger", "Mint", "Superheroes", 1));
-    	Catalog.addComics(new Comics("Spider Man","Stan Lee && Steve Ditko", "Mint", "Superheroes", 2));
+    	Catalog.addComics(new Comics("Batman","Bob Kane && Bill Finger", "Mint", "Superheroes", 0));
+    	Catalog.addComics(new Comics("Spider Man","Stan Lee && Steve Ditko", "Mint", "Superheroes", 1));
     	Catalog.displayComics().forEach(s-> System.out.println(s.toString()));
     	String username;
     	String password;

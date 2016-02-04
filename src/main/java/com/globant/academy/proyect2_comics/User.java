@@ -8,6 +8,14 @@ public class User extends People{
 	private String password;
 	private ArrayList<Loans> loans;
 	
+	public User(){}
+	public User(String username, String password){
+		this.username = username;
+		this.password = password;
+	}
+	
+
+	
 	
 	final private String[] userActivities =
 		{
@@ -31,10 +39,8 @@ public class User extends People{
 		
 	}
 	
-	private static int userInput;{
-		Scanner input = new Scanner(System.in);
-		input.equals(input);
-		input.close();
+	public static void consoleInputs(){
+		ConsoleInputs.readInputInt();
 	}
 	
 	public void userActivity(int a){
@@ -61,7 +67,7 @@ public class User extends People{
 			break;
 			
 		case 4:
-			System.out.println("Log out");
+			System.out.println("You have logged out");
 			this.logOut();
 			break;
 		}		
@@ -69,7 +75,7 @@ public class User extends People{
 	
 	// userActivity 0
 	public void watchComicList(){
-		
+		Catalog.displayComics().forEach(s-> System.out.println(s.toString()));
 	}
 	
 	//userActivity 1
@@ -79,7 +85,10 @@ public class User extends People{
 	
 	//userActivity 2
 	public void askForLoan(){
-		
+		System.out.println("Choose the comic Id of the comic you want to borrow from Dr.Sheldon");
+		Catalog.displayComics().forEach(s-> System.out.println(s.toString()));
+		Catalog.displayComics().get(ConsoleInputs.readInputInt());
+		System.out.println("You chose:");
 	}
 	
 	//userActivity 3
@@ -89,7 +98,7 @@ public class User extends People{
 	
 	//userActivity 4
 	public void logOut(){
-		
+		System.out.println("Have a nice day!");
 	}
 	
 	
