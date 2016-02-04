@@ -47,10 +47,8 @@ public class Admin extends User{
 	
 	}
 	
-	private static int adminInput;{
-		Scanner input = new Scanner(System.in);
-		input.equals(input);
-		input.close();
+	public static void consoleInputs(){
+		ConsoleInputs.readInputInt();
 	}
 	
 	public void adminActivity(int i){
@@ -133,6 +131,7 @@ public class Admin extends User{
 			break;
 	}
 
+	
 	}
 	public void addUser(User user){
 		Catalog.addUsers(user);
@@ -146,13 +145,29 @@ public class Admin extends User{
 		Catalog.removeUsers(user);
 	}
 	
+	
 	//adminActivity0
 	public void watchComicList(){
 		Catalog.displayComics().forEach(s-> System.out.println(s.toString()));
 	}
 	
 	//adminActivity1
-	public void addNewComics(){
+	public Comics addNewComics(){
+		String title;
+		String author;
+		String condition;
+		String genre;
+		int comicId;
+		System.out.println("Enter the Comics: Title, Author, Condition, Genre and ComicId");
+		title = ConsoleInputs.readInputString();
+		author = ConsoleInputs.readInputString();
+		condition = ConsoleInputs.readInputString();
+		genre = ConsoleInputs.readInputString();
+		comicId = ConsoleInputs.readInputInt();
+		Comics comic = new Comics(title, author, condition, genre, comicId);
+		Catalog.addComics(comic );
+		Catalog.displayComics().forEach(s-> System.out.println(s.toString()));
+		return comic;
 		
 	}
 	
@@ -178,7 +193,8 @@ public class Admin extends User{
 	
 	//adminActivity6
 	public void watchExistingUsers(){
-		
+		Catalog.displayUsers().forEach(s-> System.out.println(s.toString()));
+
 	}
 	
 	//adminActivity7
@@ -218,6 +234,7 @@ public class Admin extends User{
 	
 	//adminActivity14
 	public void watchExistingGenres(){
-		
+		Catalog.displayGenres().forEach(s-> System.out.println(s));
+
 	}
 }

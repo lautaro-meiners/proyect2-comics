@@ -14,16 +14,16 @@ public class App
     	Catalog.addComics(new Comics("Batman","Bob Kane && Bill Finger", "Mint", "Superheroes", 1));
     	Catalog.addComics(new Comics("Spider Man","Stan Lee && Steve Ditko", "Mint", "Superheroes", 2));
     	Catalog.displayComics().forEach(s-> System.out.println(s.toString()));
-    	Scanner input = new Scanner(System.in);
     	String username;
     	String password;
     	
     	System.out.println("Log in:");
     	System.out.println("Username:");
-    	username = input.next();
+    	username = ConsoleInputs.readInputString();
     	
     	System.out.println("Password:");
-    	password = input.next();
+    	password = ConsoleInputs.readInputString();
+    	
     	
     	if(username.equals("Sheldon") && password.equals("Bazinga")){
     		System.out.println("Welcome Dr.Cooper");
@@ -35,6 +35,8 @@ public class App
     		System.out.println("Welcome Leonard");
     		UserMenu displayMenu = new UserMenu();
     	}
+    	
+    	ConsoleInputs.close();
     	
     	/*System.out.println("Select any of the options below");
     	System.out.println("0) Watch Comics list");

@@ -8,6 +8,7 @@ public class User extends People{
 	private String password;
 	private ArrayList<Loans> loans;
 	
+	
 	final private String[] userActivities =
 		{
 				"0) Watch comics list",
@@ -36,8 +37,8 @@ public class User extends People{
 		input.close();
 	}
 	
-	public void userActivity(int i){
-		switch(i){
+	public void userActivity(int a){
+		switch(a){
 		
 		case 0: 
 			System.out.println("This is the list of comics available");

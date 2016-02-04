@@ -38,13 +38,11 @@ public class AdminMenu {
 	System.out.println("14) Watch existing genres");
 	System.out.println("********************************");
 
-	Scanner input = new Scanner(System.in);
-
-	int  i =input.nextInt();
+	int  i = ConsoleInputs.readInputInt();
 
 	Admin test = new Admin();
 	test.adminActivity(i);
-	input.close();
+	
 }
 }
 

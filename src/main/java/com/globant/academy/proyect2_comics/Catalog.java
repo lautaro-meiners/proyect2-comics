@@ -16,11 +16,11 @@ public class Catalog {
 		return loans;
 	}
 	
-	public ArrayList<User> displayUsers(){
+	public static ArrayList<User> displayUsers(){
 		return users;
 	}
 	
-	public ArrayList<String> displayGenres(){
+	public static ArrayList<String> displayGenres(){
 		return genres;
 	}
 

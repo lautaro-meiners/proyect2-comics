@@ -18,12 +18,10 @@ public class UserMenu {
 	System.out.println("4)Log out");
 	System.out.println("********************************");
 	
-	Scanner input = new Scanner(System.in);
-
-	int  i =input.nextInt();
+	int  a =ConsoleInputs.readInputInt();
 
 	User test = new User();
-	test.userActivity(i);
-	input.close();
+	test.userActivity(a);
+
 	}
 }
