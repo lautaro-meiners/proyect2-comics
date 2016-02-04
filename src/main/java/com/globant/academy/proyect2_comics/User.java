@@ -14,8 +14,9 @@ public class User extends People{
 		this.password = password;
 	}
 	
-
-	
+	public String toString(){
+		return "Username:" + username + " Password:" + password;
+	}
 	
 	final private String[] userActivities =
 		{
@@ -87,8 +88,9 @@ public class User extends People{
 	public void askForLoan(){
 		System.out.println("Choose the comic Id of the comic you want to borrow from Dr.Sheldon");
 		Catalog.displayComics().forEach(s-> System.out.println(s.toString()));
-		Catalog.displayComics().get(ConsoleInputs.readInputInt());
+		Comics chosenComic = Catalog.displayComics().get(ConsoleInputs.readInputInt());
 		System.out.println("You chose:");
+		System.out.println(chosenComic.toString());
 	}
 	
 	//userActivity 3
@@ -101,5 +103,11 @@ public class User extends People{
 		System.out.println("Have a nice day!");
 	}
 	
-	
+	public boolean equals(User users){
+		if(users == this){
+			return true;
+		} else{
+			return false;
+		}
+	}
 }

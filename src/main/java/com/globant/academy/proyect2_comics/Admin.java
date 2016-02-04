@@ -189,12 +189,14 @@ public class Admin extends User{
 	public void deleteExistingUsers(){
 		System.out.println("Choose the user´s name you want to delete");
 		Catalog.displayUsers().forEach(s-> System.out.println(s.toString()));
-		Catalog.displayUsers().remove(ConsoleInputs.readInputInt());
+		User user = new User(ConsoleInputs.readInputString(), ConsoleInputs.readInputString());
+		Catalog.removeUsers(user);
 		Catalog.displayUsers().forEach(s->System.out.println(s.toString()));
 	}
 	
 	//adminActivity6
 	public void watchExistingUsers(){
+		System.out.println("The list of existing users is:");
 		Catalog.displayUsers().forEach(s-> System.out.println(s.toString()));
 
 	}
@@ -212,11 +214,13 @@ public class Admin extends User{
 	
 	//adminActivity9
 	public void deleteExistingLoans(){
+		System.out.println("Choose id of the Loan you want to remove");
 		
 	}
 	
 	//adminActivity10
 	public void watchExistingLoans(){
+		System.out.println("Watch the list of existing loans:");
 		
 	}
 	

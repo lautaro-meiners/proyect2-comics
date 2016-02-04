@@ -17,6 +17,8 @@ public class App
     	String username;
     	String password;
     	
+    	Catalog.addUsers(new User("Howard","Engineering"));
+    	Catalog.addUsers(new User("Leonard", "Penny"));
     	System.out.println("Log in:");
     	System.out.println("Username:");
     	username = ConsoleInputs.readInputString();
