@@ -218,22 +218,25 @@ public class Admin extends User{
 	public void deleteExistingLoans(){
 		System.out.println("Choose id of the Loan you want to remove");
 		Catalog.displayLoans().forEach(s-> System.out.println(s.toString()));
-		
+		Loans loans1 = new Loans(ConsoleInputs.readInputInt(), null, null, null);
+		Catalog.removeLoan(loans1);
+		Catalog.displayLoans().forEach(s-> System.out.println(s.toString()));
+
 	}
 	
 	//adminActivity10
 	public void watchExistingLoans(){
 		System.out.println("Watch the list of existing loans:");
-		
+		Catalog.displayLoans().forEach(s-> System.out.println(s.toString()));
 	}
 	
 	//adminActivity11
 	public void addNewGenres(){
 		System.out.println("Add a new genre:");
 		Catalog.displayGenres().forEach(s-> System.out.println(s.toString()));
-	//	Genre genre = new Genre(ConsoleInputs.readInputString());
-	//	Catalog.addGenres();
-		
+		String genre = new String(ConsoleInputs.readInputString());
+		Catalog.addGenres(genre);
+		Catalog.displayGenres().forEach(s-> System.out.println(s.toString()));
 	}
 	
 	//adminActivity12
@@ -243,7 +246,12 @@ public class Admin extends User{
 	
 	//adminActivity13
 	public void deleteExistingGenres(){
-		
+		System.out.println("Enter the name of the genre you want to delete");
+		Catalog.displayGenres().forEach(s-> System.out.println(s.toString()));
+		String genre = new String(ConsoleInputs.readInputString());
+		Catalog.removeGenres(genre);
+		Catalog.displayGenres().forEach(s-> System.out.println(s.toString()));
+
 	}
 	
 	//adminActivity14

@@ -51,6 +51,10 @@ public class Catalog {
 	public static void addGenres(String genre){
 		genres.add(genre);
 	}
+	
+	public static void removeGenres(String genre){
+		genres.remove(genre);
+	}
 }
 	
 	

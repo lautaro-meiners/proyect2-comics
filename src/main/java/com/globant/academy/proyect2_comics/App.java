@@ -10,8 +10,9 @@ public class App
 {
 	
     public static void main( String[] args )
-    {
-    	Catalog.addComics(new Comics("Batman","Bob Kane && Bill Finger", "Mint", "Superheroes", 0));
+    {	
+    	Comics comic1 = new Comics("Batman","Bob Kane && Bill Finger", "Mint", "Superheroes",0);
+    	Catalog.addComics(comic1);
     	Catalog.addComics(new Comics("Spider Man","Stan Lee && Steve Ditko", "Mint", "Superheroes", 1));
     	Catalog.addComics(new Comics("Green Arrow","Mort Weisinger && George Papp", "Near-Mint", "Superheroes", 2));
     	Catalog.addComics(new Comics("Hal Jordan","Gil Kane && John Broome", "Mint", "Superheroes", 3));
@@ -28,8 +29,12 @@ public class App
     	String username;
     	String password;
     	
-    	Catalog.addUsers(new User("Howard","Engineering"));
+    	User user1 = new User("Howard", "Engineering");
+    	Catalog.addUsers(user1);
     	Catalog.addUsers(new User("Leonard", "Penny"));
+    	Catalog.addGenres(new String("Superheroes"));
+    	Catalog.addGenres(new String("Science Ficiton"));
+    	Catalog.addLoan(new Loans(0, comic1, user1, "Return in two weeks"));
     	System.out.println("Log in:");
     	System.out.println("Username:");
     	username = ConsoleInputs.readInputString();
