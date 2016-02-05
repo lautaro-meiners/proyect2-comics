@@ -151,7 +151,7 @@ public class Admin extends User{
 	
 	//adminActivity0
 	public void watchComicList(){
-		Catalog.displayComics().forEach(s-> System.out.println(s.toString()));
+		super.watchComicList();
 	}
 	
 	//adminActivity1
@@ -226,8 +226,7 @@ public class Admin extends User{
 	
 	//adminActivity10
 	public void watchExistingLoans(){
-		System.out.println("Watch the list of existing loans:");
-		Catalog.displayLoans().forEach(s-> System.out.println(s.toString()));
+		super.watchLoans();
 	}
 	
 	//adminActivity11
