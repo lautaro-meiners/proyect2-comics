@@ -57,7 +57,7 @@ public class User extends People{
 			break;
 			
 		case 1:
-			System.out.println("This is the list of your active loans");
+			System.out.println("This is the list of active loans");
 			this.watchLoans();
 			break;
 			
@@ -99,6 +99,11 @@ public class User extends People{
 	
 	//userActivity 3
 	public void returnComic(){
+		System.out.println("Choose the loan Id of the comic you want to return to Dr.Sheldon");
+		Catalog.displayLoans().forEach(s-> System.out.println(s.toString()));
+		Loans chosenLoans = Catalog.displayLoans().get(ConsoleInputs.readInputInt());
+		System.out.println("You chose to return:");
+		System.out.println(chosenLoans.toString());
 		
 	}
 	

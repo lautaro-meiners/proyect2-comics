@@ -68,7 +68,7 @@ public class Admin extends User{
 			this.addNewComics();
 			break;
 			
-		case 2:
+		case 2: // Los metodos modify no los voy a implementar
 			System.out.println("Modify existing comics");
 			this.modifyExistingComics();
 			break;
@@ -98,7 +98,7 @@ public class Admin extends User{
 			this.acceptNewLoans();
 			break;
 			
-		case 8:
+		case 8: // Los metodos modify no los voy a implementar
 			System.out.println("Modify existing loans");
 			this.modifyExistingLoans();
 			break;
@@ -118,7 +118,7 @@ public class Admin extends User{
 			this.addNewGenres();
 			break;
 			
-		case 12:
+		case 12: // Los metodos modify no los voy a implementar
 			System.out.println("Modify existing genres");
 			this.modifyExistingGenres();
 			break;
