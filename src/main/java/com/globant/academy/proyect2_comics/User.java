@@ -14,6 +14,10 @@ public class User extends People{
 		this.password = password;
 	}
 	
+	public String getUser(){
+		return username;
+	}
+	
 	public String toString(){
 		return "Username:" + username + " Password:" + password;
 	}
@@ -81,7 +85,7 @@ public class User extends People{
 	
 	//userActivity 1
 	public void watchLoans(){
-		
+		Catalog.displayLoans().forEach(s-> System.out.println(s.toString()));
 	}
 	
 	//userActivity 2

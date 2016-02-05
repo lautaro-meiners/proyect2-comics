@@ -12,7 +12,7 @@ public class Catalog {
 		return comics;
 	}
 	
-	public ArrayList<Loans> displayLoans(){
+	public static ArrayList<Loans> displayLoans(){
 		return loans;
 	}
 	
@@ -46,6 +46,10 @@ public class Catalog {
 	
 	public static void removeUsers(User user){
 		users.remove(user);
+	}
+	
+	public static void addGenres(String genre){
+		genres.add(genre);
 	}
 }
 	

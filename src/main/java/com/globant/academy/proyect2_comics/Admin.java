@@ -204,7 +204,9 @@ public class Admin extends User{
 	//adminActivity7
 	public void acceptNewLoans(){
 		System.out.println("Accept new loan");
-		//Loans loan = new Loans();
+		Loans loan = new Loans(ConsoleInputs.readInputInt(),Catalog.displayComics().get(ConsoleInputs.readInputInt()), (People) Catalog.displayUsers().stream().filter(s->s.getUser().equals(ConsoleInputs.readInputString())).toArray()[0], ConsoleInputs.readInputString());
+		Catalog.addLoan(loan);
+		Catalog.displayLoans().forEach(s-> System.out.println(s.toString()));
 	}
 	
 	//adminActivity8
@@ -215,6 +217,7 @@ public class Admin extends User{
 	//adminActivity9
 	public void deleteExistingLoans(){
 		System.out.println("Choose id of the Loan you want to remove");
+		Catalog.displayLoans().forEach(s-> System.out.println(s.toString()));
 		
 	}
 	
@@ -226,6 +229,10 @@ public class Admin extends User{
 	
 	//adminActivity11
 	public void addNewGenres(){
+		System.out.println("Add a new genre:");
+		Catalog.displayGenres().forEach(s-> System.out.println(s.toString()));
+	//	Genre genre = new Genre(ConsoleInputs.readInputString());
+	//	Catalog.addGenres();
 		
 	}
 	

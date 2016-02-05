@@ -6,6 +6,7 @@ public class Loans {
 	private People people;
 	private String loanSituation;
 	
+	public Loans (){}
 	public Loans(int loanId, Comics comics, People people, String loanSituation){
 		this.loanId = loanId;
 		this.comics = comics;

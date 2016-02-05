@@ -13,6 +13,17 @@ public class App
     {
     	Catalog.addComics(new Comics("Batman","Bob Kane && Bill Finger", "Mint", "Superheroes", 0));
     	Catalog.addComics(new Comics("Spider Man","Stan Lee && Steve Ditko", "Mint", "Superheroes", 1));
+    	Catalog.addComics(new Comics("Green Arrow","Mort Weisinger && George Papp", "Near-Mint", "Superheroes", 2));
+    	Catalog.addComics(new Comics("Hal Jordan","Gil Kane && John Broome", "Mint", "Superheroes", 3));
+    	Catalog.addComics(new Comics("Super Man","Jerry Siegel && Joe Schuster", "Mint", "Superheroes", 4));
+    	Catalog.addComics(new Comics("Wonder Woman","William Marston && Gardner Fox", "Near-Mint", "Superheroes", 5));
+    	Catalog.addComics(new Comics("Mr.Fantastic","Jack Kirby && Stan Lee", "Mint", "Superheroes", 6));
+    	Catalog.addComics(new Comics("Space Riders","Fabian Rangel && Alexis Ziritt", "Near-Mint", "Science Fiction", 7));
+    	Catalog.addComics(new Comics("Descender","Jeff Lemire", "Mint", "Science Fiction", 8));
+    	Catalog.addComics(new Comics("Chrononauts","Mark Millar", "Near-Mint", "Science Fiction", 9));
+    	Catalog.addComics(new Comics("Nameless","Grant Morrison", "Mint", "Science Fiction", 10));
+
+
     	Catalog.displayComics().forEach(s-> System.out.println(s.toString()));
     	String username;
     	String password;
