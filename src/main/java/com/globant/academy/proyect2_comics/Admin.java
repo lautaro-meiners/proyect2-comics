@@ -82,12 +82,13 @@ public class Admin extends User{
 			System.out.println("Accept new users");
 			this.acceptNewUsers();
 			break;
-			
+		
+			/*
 		case 5:
 			System.out.println("Delete existing users");
 			this.deleteExistingUsers();
 			break;
-			
+			*/
 		case 6:
 			System.out.println("Watch existing users");
 			this.watchExistingUsers();
@@ -136,6 +137,7 @@ public class Admin extends User{
 
 	
 	}
+	
 	public void addUser(User user){
 		Catalog.addUsers(user);
 	}
@@ -165,15 +167,31 @@ public class Admin extends User{
 	
 	//adminActivity2
 	public void modifyExistingComics(){
+		System.out.println("Modification involves two steps, first, delete the comic you want to modify and then add it again correctly");
+		try {System.out.println("Choose comic Id of the comic you want to delete");
+		Catalog.displayComics().forEach(s-> System.out.println(s.toString()));
+		Catalog.displayComics().remove(ConsoleInputs.readInputInt());
+		Catalog.displayComics().forEach(s-> System.out.println(s.toString()));
+		} catch (java.lang.IndexOutOfBoundsException e){
+			System.out.println("Please choose a valid comic Id");
+		}
+		System.out.println("Write title, author, condition, genre and comicId of the new comic");
+		Comics comic = new Comics(ConsoleInputs.readInputString(), ConsoleInputs.readInputString(), ConsoleInputs.readInputString(), ConsoleInputs.readInputString(), ConsoleInputs.readInputInt());
+		Catalog.addComics(comic);
+		Catalog.displayComics().forEach(s-> System.out.println(s.toString()));
 		
 	}
 	
 	//adminActivity3
 	public void deleteExistingComics(){
-		System.out.println("Choose comic Id of the comic you want to delete");
+		try {System.out.println("Choose comic Id of the comic you want to delete");
 		Catalog.displayComics().forEach(s-> System.out.println(s.toString()));
 		Catalog.displayComics().remove(ConsoleInputs.readInputInt());
 		Catalog.displayComics().forEach(s-> System.out.println(s.toString()));
+		} catch (java.lang.IndexOutOfBoundsException e){
+			System.out.println("Please choose a valid comic Id");
+		}
+		
 	}
 	
 	//adminActivity4
@@ -185,14 +203,34 @@ public class Admin extends User{
 
 	}
 	
-	//adminActivity5
+	/*
+	//adminActivity5 No se porque no anda mas... 
 	public void deleteExistingUsers(){
 		System.out.println("Choose the user´s name you want to delete");
 		Catalog.displayUsers().forEach(s-> System.out.println(s.toString()));
 		User user = new User(ConsoleInputs.readInputString(), ConsoleInputs.readInputString());
 		Catalog.removeUsers(user);
 		Catalog.displayUsers().forEach(s->System.out.println(s.toString()));
+		
 	}
+	*/
+	
+	//Delete users con los delete loans del user
+	public void deleteExistingUsers(){
+		System.out.println("Choose the user´s name you want to delete");
+		Catalog.displayUsers().forEach(s-> System.out.println(s.toString()));
+		User user = new User(ConsoleInputs.readInputString(), ConsoleInputs.readInputString());
+		ArrayList<Loans> list = new ArrayList<Loans>();
+		Catalog.displayLoans().stream().filter(s -> s.getPeople().equals(user)).forEach(s->list.add(s));
+		if (!list.isEmpty()){
+		for(Loans l:list){
+		Catalog.displayLoans().remove(l);
+		}
+		}
+		Catalog.removeUsers(user);
+		Catalog.displayUsers().forEach(s->System.out.println(s.toString()));
+		}
+	
 	
 	//adminActivity6
 	public void watchExistingUsers(){
@@ -200,26 +238,57 @@ public class Admin extends User{
 		Catalog.displayUsers().forEach(s-> System.out.println(s.toString()));
 
 	}
-	
+		
+			
 	//adminActivity7
-	public void acceptNewLoans(){
-		System.out.println("Accept new loan");
+	public void acceptNewLoans() {
+		try {System.out.println("Accept new loan");
+		super.watchComicList();
+		System.out.println("Enter Loan Id, Comic Id, Username, Password and Loan Situation");
 		Loans loan = new Loans(ConsoleInputs.readInputInt(),Catalog.displayComics().get(ConsoleInputs.readInputInt()), (People) Catalog.displayUsers().stream().filter(s->s.getUser().equals(ConsoleInputs.readInputString())).toArray()[0], ConsoleInputs.readInputString());
 		Catalog.addLoan(loan);
 		Catalog.displayLoans().forEach(s-> System.out.println(s.toString()));
+		} catch(java.util.InputMismatchException e){
+			System.out.println("Loan Id is an integer!");
+		} catch(java.lang.ArrayIndexOutOfBoundsException e){
+			System.out.println("Enter a valid Username and Password");
+		} catch(java.lang.IndexOutOfBoundsException e){
+			System.out.println("Enter a valid Comic Id");
+		}
 	}
 	
-	//adminActivity8
+	
+	//adminActivity8 No esta andando...
 	public void modifyExistingLoans(){
-		
+		System.out.println("Modification involves two steps, first, delete the loan you want to modify and then add it again correctly");
+		System.out.println("Choose id of the Loan you want to remove");
+		Catalog.displayLoans().forEach(s-> System.out.println(s.toString()));
+		Loans loans1 = new Loans(ConsoleInputs.readInputInt(), null, null, null);
+		Catalog.removeLoan(loans1);
+		System.out.println("You chose to delete:");
+		Catalog.displayLoans().forEach(s-> System.out.println(s.toString()));
+		try {System.out.println("Accept new loan");
+		super.watchComicList();
+		System.out.println("Enter Loan Id, Comic Id, Username, Password and Loan Situation");
+		Loans loan = new Loans(ConsoleInputs.readInputInt(),Catalog.displayComics().get(ConsoleInputs.readInputInt()), (People) Catalog.displayUsers().stream().filter(s->s.getUser().equals(ConsoleInputs.readInputString())).toArray()[0], ConsoleInputs.readInputString());
+		Catalog.addLoan(loan);
+		Catalog.displayLoans().forEach(s-> System.out.println(s.toString()));
+		} catch(java.util.InputMismatchException e){
+			System.out.println("Loan Id is an integer!");
+		} catch(java.lang.ArrayIndexOutOfBoundsException e){
+			System.out.println("Enter a valid Username and Password");
+		} catch(java.lang.IndexOutOfBoundsException e){
+			System.out.println("Enter a valid Comic Id");
+		}
 	}
-	
+
 	//adminActivity9
 	public void deleteExistingLoans(){
 		System.out.println("Choose id of the Loan you want to remove");
 		Catalog.displayLoans().forEach(s-> System.out.println(s.toString()));
 		Loans loans1 = new Loans(ConsoleInputs.readInputInt(), null, null, null);
 		Catalog.removeLoan(loans1);
+		System.out.println("You chose to delete:");
 		Catalog.displayLoans().forEach(s-> System.out.println(s.toString()));
 
 	}
@@ -240,7 +309,18 @@ public class Admin extends User{
 	
 	//adminActivity12
 	public void modifyExistingGenres(){
-		
+		System.out.println("Modification involves a two steps, first, delete the genre you want to modify and then add it again correctly");
+		System.out.println("Enter the name of the genre you want to delete");
+		Catalog.displayGenres().forEach(s-> System.out.println(s.toString()));
+		String genre = new String(ConsoleInputs.readInputString());
+		Catalog.removeGenres(genre);
+		Catalog.displayGenres().forEach(s-> System.out.println(s.toString()));
+		System.out.println("Add a new genre:");
+		Catalog.displayGenres().forEach(s-> System.out.println(s.toString()));
+		String genre1 = new String(ConsoleInputs.readInputString());
+		Catalog.addGenres(genre1);
+		Catalog.displayGenres().forEach(s-> System.out.println(s.toString()));
+
 	}
 	
 	//adminActivity13

@@ -8,6 +8,7 @@ public class Comics {
 	private int comicId;
 	private boolean rendered;
 	
+	
 	public Comics(String title,String author,String condition,String genre,int comicId){
 		this.title = title;
 		this.author = author;
@@ -45,5 +46,18 @@ public class Comics {
 		return rendered;
 	}
 	
+	/*
+	public void increaseCopies(){
+		this.copies = copies + 1;
+	}
 	
+	public boolean removeCopies (){
+		if (copies >= 1){
+			this.copies = copies - 1;
+			return true;
+		} 
+		return false;
+	}
+	
+	*/
 }
