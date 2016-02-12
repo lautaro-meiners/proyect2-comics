@@ -7,6 +7,7 @@ public class Comics {
 	private String genre;
 	private int comicId;
 	private boolean rendered;
+	private int copies;
 	
 	
 	public Comics(String title,String author,String condition,String genre,int comicId){
@@ -46,7 +47,7 @@ public class Comics {
 		return rendered;
 	}
 	
-	/*
+	
 	public void increaseCopies(){
 		this.copies = copies + 1;
 	}
@@ -59,5 +60,5 @@ public class Comics {
 		return false;
 	}
 	
-	*/
+	
 }
