@@ -14,9 +14,14 @@ public class User extends People{
 		this.password = password;
 	}
 	
-	public String getUser(){
+	public String getUsername(){
 		return username;
 	}
+	
+	public String getPassword(){
+		return password;
+	}
+	
 	
 	public String toString(){
 		return "Username:" + username + " Password:" + password;
@@ -113,7 +118,7 @@ public class User extends People{
 	}
 	
 	public boolean equals(User users){
-		if(users == this){
+		if(this.username == users.getUsername() && this.password == users.getPassword()){
 			return true;
 		} else{
 			return false;
