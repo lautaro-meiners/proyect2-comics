@@ -52,6 +52,8 @@ public class App
     	} else if(username.equals("Leonard") && password.equals("Penny")){
     		System.out.println("Welcome Leonard");
     		UserMenu displayMenu = new UserMenu();
+    	} else {
+    		System.out.println("Invalid username or password");
     	}
     	
     	ConsoleInputs.close();
